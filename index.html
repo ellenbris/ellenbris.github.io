@@ -964,58 +964,99 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         let initialProjects = [
             {
                 id: '1',
-                title: 'Low-Noise Transimpedance Amplifier PCB',
+                title: 'fA X-Ray Detector - Max Planck Institute For Nuclear Physics',
                 category: 'hardware',
-                image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-                tags: ['KiCad', 'Analog Design', 'LTspice', 'PCB Design'],
+                image: 'images/xraysensorpcb.png',
+                tags: ['KiCad'],
                 github: '',
                 demo: '',
                 dots: [
-                    'Designed multi-layer PCB layout incorporating guarded feedback paths to minimize parasitic leakage currents.',
-                    'Executed transient and AC parameter sweeps in LTspice to optimize gain bandwidth response across detector photodiode capacitance ranges.',
-                    'Fabricated prototype boards on a precision isolation milling machine with optical fiducial alignment.'
+                    'Multi-iteration design of multi-stage transimpedance amplifier',
+                    'Large attention to limiting noise coupling and feedback capacitance',
+                    'Tested with Sr90 and Fe55 sources', 
+                    'Replace ~20k euro X-ray detector in beamline'    
                 ]
             },
             {
                 id: '2',
-                title: 'Autonomous Rover Trajectory & Kinematics',
-                category: 'robotics',
-                image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-                tags: ['Robotics', 'ROS2', 'C++', 'MicroPython', 'IMU Integration'],
+                title: 'Liquid Nitrogen Level Sensor - Max Planck Institute For Nuclear Physics',
+                category: 'hardware',
+                image: 'images/levelsensorfinal.jpg',
+                tags: ['KiCad', 'Raspberry Pico', 'Solidworks'],
                 github: '',
                 demo: '',
                 dots: [
-                    'Built 4-wheel differential drive kinematics model with real-time wheel encoder feedback.',
-                    'Implemented closed-loop PID motion controllers executing waypoints via IMU and sensor telemetry.',
-                    'Designed custom 3D-printed chassis components optimized for lightweight structural stability.'
+                    'Designed 2-layer pcb to detect 50-150pF change in probe capacitance due to liquid nitrogen level change',
+                    'Designed probe on Solidworks to fit inside superconducting magnet, choosing materials that function in cryogenic temperatures',
+                    'Replace ~1k euro probe + long order lead time (1 of 3 of these magnets in the world)'
                 ]
             },
             {
                 id: '3',
-                title: 'Sensor Telemetry Data Pipeline & Spectral Analysis',
-                category: 'data',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-                tags: ['Python', 'Pandas', 'SciPy', 'Data Analysis', 'Matplotlib'],
+                title: 'Helium Level Sensor Circuit - Max Planck Institute For Nuclear Physics',
+                category: 'hardware',
+                image: 'images/heliumsensorpcb.png',
+                tags: ['KiCad', 'Raspberry Pico'],
                 github: '',
                 demo: '',
                 dots: [
-                    'Built an automated data cleaning and spectral FFT analysis engine for high-frequency accelerometer logs.',
-                    'Engineered rolling z-score algorithm detecting sensor measurement anomalies with high precision.',
-                    'Published interactive data dashboards visualizing real-time signal noise and harmonic frequency bands.'
+                    'Designed 2-layer pcb using 4-wire method to detect resistance change in probe due to liquid helium level change'',
+                    'Designed to avoid evaporation of helium',
+                    'Replace ~5k euro probe + long order lead time (1 of 3 of these magnets in the world)'
                 ]
             },
             {
                 id: '4',
-                title: 'Community Tech Hardware Outreach Project',
-                category: 'other',
-                image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
-                tags: ['STEM Outreach', 'Workshop Design', 'Open Source', 'Education'],
+                title: 'Pump Valve Protection Circuit - Max Planck Institute For Nuclear Physics',
+                category: 'hardware',
+                image: 'images/scrollpump.png',
+                tags: ['KiCad', 'Raspberry Pico', '3D Printing', 'Solidworks'],
                 github: '',
                 demo: '',
                 dots: [
-                    'Organized hands-on physics and electronics workshops introducing basic hardware circuits to local students.',
-                    'Created open-source instructional guides and interactive starter kits for breadboard experiments.',
-                    'Collaborated with community partners to promote accessible STEM learning tools.'
+                    'Re-designed circuit that delays valve startup, to protect vacuum after power cut',
+                    'Allows for circuit to fit tightly behind pump with no wires',
+                    'Designed and printed box to fit pcb'    
+                ]
+            },
+            {
+                id: '5',
+                title: 'Compact BioSand Filter - Clear Cambodia',
+                category: 'other',
+                image: 'images/clearcambodia',
+                tags: ['Solidworks', 'Water Testing', 'Experiment Design'],
+                github: '',
+                demo: 'https://sites.google.com/view/ellen-brisley-cambodia/home?authuser=0',
+                dots: [
+                    'Designed and developed prototype of compact BioSand Filter - see link in top right corner for more information',
+                    'Led 2-month field experiment in Cambodia to evaluate filter efficiency; demonstrated filtration performance on par with control filters'
+                ]
+            },
+            {
+                id: '6',
+                title: 'Mass Spectrometry Analysis - TRIUMF Particle Accelerator',
+                category: 'data analysis',
+                image: 'images/csanalysis',
+                tags: ['Python', 'Likelihood Ratio Tests'],
+                github: '',
+                demo: 'https://www.linkedin.com/posts/ellen-brisley-enphstudent_triumf-recap-data-analysis-project-activity-7308404535637463042-7LMn/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADOkgj0BMPvd9dE7gpz3T5UTL3doQi4ZeBs',
+                dots: [
+                    'Python data analysis on neutron-deficient Cs/Ba isotopes and isomers - see link in top right corner for poster',
+                    'Identified isomers as overlapping peaks, using likelihood ratio tests'
+                ]
+            }
+            {
+                id: '7',
+                title: 'Autonomous Robot - Engineering Physics',
+                category: 'robotics',
+                image: 'images/robot',
+                tags: ['OnShape', 'Prototyping', 'Laser Cutting', 'Circuit Troubleshooting'],
+                github: '',
+                demo: '',
+                dots: [
+                    'Robot autonomously navigates surface with line following, detecting objects and rescuing them',
+                    'Designed and prototyped claw and linear actuator system with CAD and laser/waterjet cutting',
+                    'Troubleshot circuits integrating ESP32, Hall-Effect/LiDAR, and rotary encoders'
                 ]
             }
         ];
