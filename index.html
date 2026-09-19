@@ -157,13 +157,13 @@
     </footer>
 
     <script>
-        // Official project list
+        // Official project list with corrected ordering and dual images for Liquid Nitrogen Level Sensor
         let initialProjects = [
             {
                 id: '1',
                 title: 'fA X-Ray Detector - Max Planck Institute For Nuclear Physics',
                 category: 'hardware',
-                image: 'images/xraysensorpcb.png',
+                images: ['images/xraysensorpcb.png'],
                 tags: ['KiCad'],
                 github: '',
                 demo: '',
@@ -178,7 +178,7 @@
                 id: '2',
                 title: 'Liquid Nitrogen Level Sensor - Max Planck Institute For Nuclear Physics',
                 category: 'hardware',
-                image: 'images/levelsensorfinal.jpg',
+                images: ['images/levelsensorfinal.jpg', 'images/levelsensorpcb.png'],
                 tags: ['KiCad', 'Raspberry Pico', 'Solidworks'],
                 github: '',
                 demo: '',
@@ -192,7 +192,7 @@
                 id: '3',
                 title: 'Helium Level Sensor Circuit - Max Planck Institute For Nuclear Physics',
                 category: 'hardware',
-                image: 'images/heliumsensorpcb.png',
+                images: ['images/heliumsensorpcb.png'],
                 tags: ['KiCad', 'Raspberry Pico'],
                 github: '',
                 demo: '',
@@ -206,7 +206,7 @@
                 id: '4',
                 title: 'Pump Valve Protection Circuit - Max Planck Institute For Nuclear Physics',
                 category: 'hardware',
-                image: 'images/scrollpump.png',
+                images: ['images/scrollpump.png'],
                 tags: ['KiCad', 'Raspberry Pico', '3D Printing', 'Solidworks'],
                 github: '',
                 demo: '',
@@ -218,9 +218,23 @@
             },
             {
                 id: '5',
+                title: 'Autonomous Robot - Engineering Physics',
+                category: 'robotics',
+                images: ['images/robot.png'],
+                tags: ['OnShape', 'Prototyping', 'Laser Cutting', 'Circuit Troubleshooting'],
+                github: '',
+                demo: 'https://www.youtube.com/watch?v=kZz8G45xUVI',
+                dots: [
+                    'Robot autonomously navigates surface with line following, detecting objects and rescuing them - see link in top right corner for competition',
+                    'Designed and prototyped claw and linear actuator system with CAD and laser/waterjet cutting',
+                    'Troubleshot circuits integrating ESP32, Hall-Effect/LiDAR, and rotary encoders'
+                ]
+            },
+            {
+                id: '6',
                 title: 'Compact BioSand Filter - Clear Cambodia',
                 category: 'other',
-                image: 'images/clearcambodia',
+                images: ['images/clearcambodia.png'],
                 tags: ['Solidworks', 'Water Testing', 'Experiment Design'],
                 github: '',
                 demo: 'https://sites.google.com/view/ellen-brisley-cambodia/home?authuser=0',
@@ -230,30 +244,16 @@
                 ]
             },
             {
-                id: '6',
+                id: '7',
                 title: 'Mass Spectrometry Analysis - TRIUMF Particle Accelerator',
                 category: 'data analysis',
-                image: 'images/csanalysis',
+                images: ['images/csanalysis.png'],
                 tags: ['Python', 'Likelihood Ratio Tests'],
                 github: '',
                 demo: 'https://www.linkedin.com/posts/ellen-brisley-enphstudent_triumf-recap-data-analysis-project-activity-7308404535637463042-7LMn/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADOkgj0BMPvd9dE7gpz3T5UTL3doQi4ZeBs',
                 dots: [
                     'Python data analysis on neutron-deficient Cs/Ba isotopes and isomers - see link in top right corner for poster',
                     'Identified isomers as overlapping peaks, using likelihood ratio tests'
-                ]
-            },
-            {
-                id: '7',
-                title: 'Autonomous Robot - Engineering Physics',
-                category: 'robotics',
-                image: 'images/robot',
-                tags: ['OnShape', 'Prototyping', 'Laser Cutting', 'Circuit Troubleshooting'],
-                github: '',
-                demo: '',
-                dots: [
-                    'Robot autonomously navigates surface with line following, detecting objects and rescuing them',
-                    'Designed and prototyped claw and linear actuator system with CAD and laser/waterjet cutting',
-                    'Troubleshot circuits integrating ESP32, Hall-Effect/LiDAR, and rotary encoders'
                 ]
             }
         ];
@@ -314,12 +314,31 @@
                 const tagsHtml = p.tags.map(t => `<span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60">${t.trim()}</span>`).join('');
                 const dotsHtml = p.dots.map(d => `<li class="flex items-start text-xs sm:text-sm text-slate-600 dark:text-slate-300"><span class="text-brand-500 mr-2.5 font-bold select-none">•</span><span>${d.replace(/^[•\-\*]\s*/, '')}</span></li>`).join('');
 
-                card.innerHTML = `
-                    <div class="md:w-2/5 lg:w-5/12 bg-slate-100 dark:bg-slate-800/50 relative overflow-hidden min-h-[200px] md:min-h-full flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
-                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
-                    </div>
+                const imgs = p.images || (p.image ? [p.image] : []);
+                let imageContainerHtml = '';
 
+                if (imgs.length > 1) {
+                    imageContainerHtml = `
+                        <div class="md:w-2/5 lg:w-5/12 bg-slate-100 dark:bg-slate-800/50 relative overflow-hidden min-h-[220px] md:min-h-full flex flex-col sm:flex-row md:flex-col border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 divide-y sm:divide-y-0 sm:divide-x md:divide-x-0 md:divide-y divide-slate-200 dark:divide-slate-800">
+                            ${imgs.map(imgSrc => `
+                                <div class="flex-1 relative overflow-hidden h-full min-h-[110px]">
+                                    <img src="${imgSrc}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';">
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    const imgSrc = imgs[0] || 'https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';
+                    imageContainerHtml = `
+                        <div class="md:w-2/5 lg:w-5/12 bg-slate-100 dark:bg-slate-800/50 relative overflow-hidden min-h-[200px] md:min-h-full flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+                            <img src="${imgSrc}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    ${imageContainerHtml}
                     <div class="p-5 sm:p-6 md:w-3/5 lg:w-7/12 flex flex-col justify-between">
                         <div>
                             <div class="flex items-start justify-between gap-2 mb-2">
