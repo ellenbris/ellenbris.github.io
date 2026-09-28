@@ -41,17 +41,10 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .bg-grid-pattern {
             background-size: 30px 30px;
-            background-image: 
-                linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-        }
-
-        .dark .bg-grid-pattern {
             background-image: 
                 linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -64,45 +57,34 @@
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
             background: #334155;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col bg-grid-pattern antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col bg-grid-pattern antialiased selection:bg-brand-500 selection:text-white">
 
-    <header class="sticky top-0 z-30 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+    <header class="sticky top-0 z-30 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 transition-colors">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-brand-500/20">
-                    EB
+                        EB
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Ellen Brisley</h1>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Engineering Physics Student</p>
+                        <h1 class="text-xl font-bold tracking-tight text-white">Ellen Brisley</h1>
+                        <p class="text-xs text-slate-400 font-medium">Engineering Physics Student</p>
                     </div>
-                </div>
-
-                <!-- Mobile theme toggle controls -->
-                <div class="flex items-center gap-2 sm:hidden">
-                    <button id="themeToggleMobile" class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <i class="fa-solid fa-moon dark:hidden"></i>
-                        <i class="fa-solid fa-sun hidden dark:inline"></i>
-                    </button>
                 </div>
             </div>
 
             <!-- Header Action Controls & Social Links -->
             <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end flex-wrap sm:flex-nowrap">
-                <div class="flex items-center space-x-2 text-slate-600 dark:text-slate-400">
-                    <a href="https://ca.linkedin.com/in/ellen-brisley-enphstudent" target="_blank" rel="noopener" class="p-2 rounded-lg hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition" title="LinkedIn Profile">
+                <div class="flex items-center space-x-2 text-slate-400">
+                    <a href="https://ca.linkedin.com/in/ellen-brisley-enphstudent" target="_blank" rel="noopener" class="p-2 rounded-lg hover:text-brand-400 hover:bg-slate-800/60 transition" title="LinkedIn Profile">
                         <i class="fa-brands fa-linkedin text-xl"></i>
                     </a>
-                    <a href="mailto:ecbriz26@outlook.com" class="p-2 rounded-lg hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition" title="Send Email">
+                    <a href="mailto:ecbriz26@outlook.com" class="p-2 rounded-lg hover:text-brand-400 hover:bg-slate-800/60 transition" title="Send Email">
                         <i class="fa-solid fa-envelope text-xl"></i>
                     </a>
                 </div>
@@ -112,15 +94,6 @@
                     <i class="fa-solid fa-file-pdf text-sm"></i>
                     <span>Resume</span>
                 </a>
-
-                <div class="h-5 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
-
-                <div class="flex items-center gap-2">
-                    <button id="themeToggle" class="hidden sm:flex p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Toggle Theme">
-                        <i class="fa-solid fa-moon dark:hidden"></i>
-                        <i class="fa-solid fa-sun hidden dark:inline"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </header>
@@ -128,42 +101,39 @@
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
         <!-- Intro Statement -->
         <section class="mb-8">
-            <div class="bg-gradient-to-r from-blue-500/10 via-indigo-500/5 to-transparent p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-sm">
-                <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">
+            <div class="bg-gradient-to-r from-blue-500/10 via-indigo-500/5 to-transparent p-6 rounded-2xl border border-slate-800/80 backdrop-blur-sm">
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
                     I am interested in physics and hardware, exploring how it can be used in research, tech, and supporting communities!
                 </p>
             </div>
         </section>
 
         <!-- Subgroup Category Filter Controls -->
-        <section class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 dark:border-slate-800/80 pb-4">
+        <section class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800/80 pb-4">
             <div class="flex flex-wrap gap-2" id="filterTabs">
                 <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 text-xs font-semibold rounded-full bg-brand-600 text-white transition">All Projects</button>
-                <button onclick="filterProjects('hardware')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Hardware</button>
-                <button onclick="filterProjects('robotics')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Robotics</button>
-                <button onclick="filterProjects('data analysis')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Data Analysis</button>
-                <button onclick="filterProjects('other')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Other</button>
+                <button onclick="filterProjects('hardware')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Hardware</button>
+                <button onclick="filterProjects('robotics')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Robotics</button>
+                <button onclick="filterProjects('data analysis')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Data Analysis</button>
+                <button onclick="filterProjects('other')" class="filter-btn px-3.5 py-1.5 text-xs font-medium rounded-full bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Other</button>
             </div>
-            <div class="text-xs text-slate-500 dark:text-slate-400 font-mono" id="projectCount">Showing 7 projects</div>
+            <div class="text-xs text-slate-400 font-mono" id="projectCount">Showing 7 projects</div>
         </section>
 
         <!-- Container where projects render -->
         <section class="space-y-6" id="projectsGrid"></section>
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-slate-800/80 py-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-12 bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm">
+    <footer class="border-t border-slate-800/80 py-6 text-center text-xs text-slate-400 mt-12 bg-slate-950/50 backdrop-blur-sm">
         <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
             <div>
                 © <span id="year">2026</span> Ellen Brisley. Hosted on <strong>GitHub Pages</strong>.
-            </div>
-            <div class="font-mono text-[11px] text-slate-400 dark:text-slate-500">
-                HTML + CSS + JavaScript • Clean & Lightweight
             </div>
         </div>
     </footer>
 
     <script>
-        // Official project list with corrected ordering and dual images for Liquid Nitrogen Level Sensor
+        // Official project list
         let initialProjects = [
             {
                 id: '1',
@@ -267,30 +237,6 @@
         let projects = initialProjects;
         let activeCategory = 'all';
 
-        const themeToggleBtns = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
-        
-        function initTheme() {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        }
-
-        themeToggleBtns.forEach(btn => {
-            if (btn) {
-                btn.addEventListener('click', () => {
-                    if (document.documentElement.classList.contains('dark')) {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.theme = 'light';
-                    } else {
-                        document.documentElement.classList.add('dark');
-                        localStorage.theme = 'dark';
-                    }
-                });
-            }
-        });
-
         document.getElementById('year').innerText = new Date().getFullYear();
 
         function renderProjects() {
@@ -305,7 +251,7 @@
 
             if (filtered.length === 0) {
                 container.innerHTML = `
-                    <div class="text-center py-12 border border-dashed border-slate-300 dark:border-slate-800 rounded-2xl">
+                    <div class="text-center py-12 border border-dashed border-slate-800 rounded-2xl">
                         <i class="fa-solid fa-folder-open text-3xl text-slate-400 mb-2"></i>
                         <p class="text-sm text-slate-500">No projects found in this category.</p>
                     </div>
@@ -315,17 +261,17 @@
 
             filtered.forEach(p => {
                 const card = document.createElement('article');
-                card.className = 'bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col md:flex-row group';
+                card.className = 'bg-slate-900/90 border border-slate-800/90 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col md:flex-row group';
                 
-                const tagsHtml = p.tags.map(t => `<span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60">${t.trim()}</span>`).join('');
-                const dotsHtml = p.dots.map(d => `<li class="flex items-start text-xs sm:text-sm text-slate-600 dark:text-slate-300"><span class="text-brand-500 mr-2.5 font-bold select-none">•</span><span>${d.replace(/^[•\-\*]\s*/, '')}</span></li>`).join('');
+                const tagsHtml = p.tags.map(t => `<span class="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">${t.trim()}</span>`).join('');
+                const dotsHtml = p.dots.map(d => `<li class="flex items-start text-xs sm:text-sm text-slate-300"><span class="text-brand-500 mr-2.5 font-bold select-none">•</span><span>${d.replace(/^[•\-\*]\s*/, '')}</span></li>`).join('');
 
                 const imgs = p.images || (p.image ? [p.image] : []);
                 let imageContainerHtml = '';
 
                 if (imgs.length > 1) {
                     imageContainerHtml = `
-                        <div class="md:w-2/5 lg:w-5/12 bg-slate-100 dark:bg-slate-800/50 relative overflow-hidden min-h-[220px] md:min-h-full flex flex-col sm:flex-row md:flex-col border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 divide-y sm:divide-y-0 sm:divide-x md:divide-x-0 md:divide-y divide-slate-200 dark:divide-slate-800">
+                        <div class="md:w-2/5 lg:w-5/12 bg-slate-800/50 relative overflow-hidden min-h-[220px] md:min-h-full flex flex-col sm:flex-row md:flex-col border-b md:border-b-0 md:border-r border-slate-800 divide-y sm:divide-y-0 sm:divide-x md:divide-x-0 md:divide-y divide-slate-800">
                             ${imgs.map(imgSrc => `
                                 <div class="flex-1 relative overflow-hidden h-full min-h-[110px]">
                                     <img src="${imgSrc}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';">
@@ -336,7 +282,7 @@
                 } else {
                     const imgSrc = imgs[0] || 'https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';
                     imageContainerHtml = `
-                        <div class="md:w-2/5 lg:w-5/12 bg-slate-100 dark:bg-slate-800/50 relative overflow-hidden min-h-[200px] md:min-h-full flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+                        <div class="md:w-2/5 lg:w-5/12 bg-slate-800/50 relative overflow-hidden min-h-[200px] md:min-h-full flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-800">
                             <img src="${imgSrc}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Project+Photo';">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
                         </div>
@@ -348,10 +294,10 @@
                     <div class="p-5 sm:p-6 md:w-3/5 lg:w-7/12 flex flex-col justify-between">
                         <div>
                             <div class="flex items-start justify-between gap-2 mb-2">
-                                <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">${p.title}</h2>
+                                <h2 class="text-base sm:text-lg font-bold text-white leading-snug">${p.title}</h2>
                                 <div class="flex items-center gap-1 shrink-0">
-                                    ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition" title="Source Code"><i class="fa-brands fa-github text-base"></i></a>` : ''}
-                                    ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition" title="Live Demo / Report"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>` : ''}
+                                    ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-200 transition" title="Source Code"><i class="fa-brands fa-github text-base"></i></a>` : ''}
+                                    ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-200 transition" title="Live Demo / Report"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>` : ''}
                                 </div>
                             </div>
 
@@ -364,7 +310,7 @@
                             </ul>
                         </div>
 
-                        <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                        <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
                             <span>CATEGORY: ${p.category.toUpperCase()}</span>
                             <span>ID: #${p.id}</span>
                         </div>
@@ -378,10 +324,10 @@
             activeCategory = cat;
             document.querySelectorAll('#filterTabs button').forEach(btn => {
                 btn.classList.remove('bg-brand-600', 'text-white', 'active');
-                btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
             });
 
-            event.target.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
             event.target.classList.add('bg-brand-600', 'text-white', 'active');
 
             renderProjects();
@@ -389,7 +335,6 @@
 
         window.onload = function() {
             localStorage.removeItem('my_portfolio_projects');
-            initTheme();
             renderProjects();
         };
     </script>
