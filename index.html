@@ -133,11 +133,12 @@
     </footer>
 
     <script>
-        // Official project list
+        // Official project list with date fields added
         let initialProjects = [
             {
                 id: '1',
                 title: 'fA X-Ray Detector - Max Planck Institute For Nuclear Physics',
+                date: '2026',
                 category: 'hardware',
                 images: ['images/xraysensorpcb.png'],
                 tags: ['KiCad'],
@@ -153,6 +154,7 @@
             {
                 id: '2',
                 title: 'Liquid Nitrogen Level Sensor - Max Planck Institute For Nuclear Physics',
+                date: '2026',
                 category: 'hardware',
                 images: ['images/levelsensorfinal.jpg'],
                 tags: ['KiCad', 'Raspberry Pico', 'Solidworks'],
@@ -167,6 +169,7 @@
             {
                 id: '3',
                 title: 'Helium Level Sensor Circuit - Max Planck Institute For Nuclear Physics',
+                date: '2026',
                 category: 'hardware',
                 images: ['images/heliumsensorpcb.png'],
                 tags: ['KiCad', 'Raspberry Pico'],
@@ -181,6 +184,7 @@
             {
                 id: '4',
                 title: 'Pump Valve Protection Circuit - Max Planck Institute For Nuclear Physics',
+                date: '2026',
                 category: 'hardware',
                 images: ['images/scrollpump.png'],
                 tags: ['KiCad', 'Raspberry Pico', '3D Printing', 'Solidworks'],
@@ -195,6 +199,7 @@
             {
                 id: '5',
                 title: 'Autonomous Robot - Engineering Physics',
+                date: '2025',
                 category: 'robotics',
                 images: ['images/robot.png'],
                 tags: ['OnShape', 'Prototyping', 'Laser Cutting', 'Circuit Troubleshooting'],
@@ -209,6 +214,7 @@
             {
                 id: '6',
                 title: 'Compact BioSand Filter - Clear Cambodia',
+                date: '2025',
                 category: 'other',
                 images: ['images/clearcambodia.png'],
                 tags: ['Solidworks', 'Water Testing', 'Experiment Design'],
@@ -222,6 +228,7 @@
             {
                 id: '7',
                 title: 'Mass Spectrometry Analysis - TRIUMF Particle Accelerator',
+                date: '2024',
                 category: 'data analysis',
                 images: ['images/csanalysis.png'],
                 tags: ['Python', 'Likelihood Ratio Tests'],
@@ -294,7 +301,10 @@
                     <div class="p-5 sm:p-6 md:w-3/5 lg:w-7/12 flex flex-col justify-between">
                         <div>
                             <div class="flex items-start justify-between gap-2 mb-2">
-                                <h2 class="text-base sm:text-lg font-bold text-white leading-snug">${p.title}</h2>
+                                <div>
+                                    <h2 class="text-base sm:text-lg font-bold text-white leading-snug">${p.title}</h2>
+                                    ${p.date ? `<div class="text-xs text-brand-400 font-medium mt-0.5"><i class="fa-regular fa-calendar-alt mr-1"></i>${p.date}</div>` : ''}
+                                </div>
                                 <div class="flex items-center gap-1 shrink-0">
                                     ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-200 transition" title="Source Code"><i class="fa-brands fa-github text-base"></i></a>` : ''}
                                     ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-slate-200 transition" title="Live Demo / Report"><i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>` : ''}
@@ -312,7 +322,7 @@
 
                         <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
                             <span>CATEGORY: ${p.category.toUpperCase()}</span>
-                            <span>ID: #${p.id}</span>
+                            <span>${p.date ? `DATE: ${p.date}` : `ID: #${p.id}`}</span>
                         </div>
                     </div>
                 `;
